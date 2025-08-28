@@ -14,8 +14,14 @@ NODE_ENV = "production"
 # KV Namespace for reservations - production
 [[env.production.kv_namespaces]]
 binding = "RESERVATIONS"
-id = "WILL_BE_GENERATED"
-preview_id = "WILL_BE_GENERATED_PREVIEW"
+id = "3ccd484b2a124c1da32fe14fa6bd11e3"
+preview_id = "037ce78c474a47b899a6008acde4b15a"
+
+# KV Namespace for sessions - production
+[[env.production.kv_namespaces]]
+binding = "SESSION"
+id = "ecdaafbd0b05401096b7b1f97007a1b2"
+preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
 
 # Preview environment configuration
 [env.preview.vars]
@@ -29,5 +35,11 @@ NODE_ENV = "preview"
 # KV Namespace for reservations - preview
 [[env.preview.kv_namespaces]]
 binding = "RESERVATIONS"
-id = "WILL_BE_GENERATED"
-preview_id = "WILL_BE_GENERATED_PREVIEW"
+id = "3ccd484b2a124c1da32fe14fa6bd11e3"
+preview_id = "037ce78c474a47b899a6008acde4b15a"
+
+# KV Namespace for sessions - preview
+[[env.preview.kv_namespaces]]
+binding = "SESSION"
+id = "ecdaafbd0b05401096b7b1f97007a1b2"
+preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
