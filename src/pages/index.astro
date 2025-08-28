@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/layout/Navigation.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import PropertyCard from '../components/property/PropertyCard.astro';
+import ContactCTA from '../components/property/ContactCTA.astro';
+import housesData from '../data/houses.json';
+import { ESTATE, COMPANY, DEFAULT_SEO } from '../lib/constants';
+
+// Filter available houses for homepage
+const availableHouses = housesData
+  .filter(house => house.status === 'available')
+  .slice(0, 6);
+
+// Property listing structured data
+const propertyListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "numberOfItems": availableHouses.length,
+  "itemListElement": availableHouses.map((house, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Product",
+      "name": house.model,
+      "description": house.description.pl,
+      "offers": {
+        "@type": "Offer",
+        "price": house.price,
+        "priceCurrency": "PLN",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  }))
+};
+---
+
+<BaseLayout 
+  title={DEFAULT_SEO.pl.title}
+  description={DEFAULT_SEO.pl.description}
+  structuredData={propertyListSchema}
+>
+  <Navigation />
+  
+  <main>
+    <!-- Hero Section -->
+    <Hero />
+    
+    <!-- About Section -->
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-warm-gray-900 mb-6">
+              O inwestycji
+            </h2>
+            <p class="text-lg text-warm-gray-700 mb-6 leading-relaxed">
+              {ESTATE.description.pl}
+            </p>
+            <div class="space-y-3">
+              {ESTATE.features.pl.slice(0, 4).map(feature => (
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-warm-gray-600">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="relative">
+            <img 
+              src="/images/gallery/estate-aerial.jpg" 
+              alt="Osiedle Brzozowe Wzgórze - widok z lotu ptaka"
+              class="rounded-soft shadow-warm"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Available Houses -->
+    <section class="section-padding bg-warm-gray-50">
+      <div class="container-custom">
+        <div class="text-center mb-12">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-warm-gray-900 mb-4">
+            Dostępne domy
+          </h2>
+          <p class="text-lg text-warm-gray-700 max-w-2xl mx-auto">
+            Odkryj nasze nowoczesne domy w skandynawskim stylu, zaprojektowane z myślą o komforcie i harmonii z naturą
+          </p>
+        </div>
+        
+        {availableHouses.length > 0 ? (
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {availableHouses.map((house, index) => (
+              <PropertyCard house={house} eager={index < 3} />
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <p class="text-lg text-warm-gray-600">
+              Obecnie wszystkie domy są zarezerwowane. Skontaktuj się z nami, aby dowiedzieć się o nowych ofertach.
+            </p>
+          </div>
+        )}
+        
+        <div class="text-center">
+          <a href="/domy" class="btn-primary inline-flex items-center">
+            Zobacz wszystkie domy
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,36 @@
+name = "falco-investments"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./dist"
+
+# KV Namespace for reservations - will be created later
+[[kv_namespaces]]
+binding = "RESERVATIONS"
+id = "WILL_BE_GENERATED"
+preview_id = "WILL_BE_GENERATED_PREVIEW"
+
+# Environment variables
+[vars]
+ADMIN_EMAIL = "kontakt@przyjaznedomy.com"
+COMPANY_NAME = "FALCO INVESTMENTS SP.ZO.O."
+COMPANY_PHONE = "668374950"
+WHATSAPP_NUMBER = "48668374950"
+ENVIRONMENT = "production"
+
+# Custom routes
+[[routes]]
+pattern = "przyjaznedomy.com/*"
+zone_name = "przyjaznedomy.com"
+
+[[routes]]
+pattern = "www.przyjaznedomy.com/*"
+zone_name = "przyjaznedomy.com"
+
+# Security headers
+[env.production.vars]
+NODE_ENV = "production"
+
+[env.preview.vars]
+NODE_ENV = "preview"
+
+[env.development.vars]
+NODE_ENV = "development"

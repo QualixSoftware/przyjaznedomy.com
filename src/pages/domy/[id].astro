@@ -1,0 +1,340 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navigation from '../../components/layout/Navigation.astro';
+import Footer from '../../components/layout/Footer.astro';
+import StatusBadge from '../../components/property/StatusBadge.astro';
+import ContactCTA from '../../components/property/ContactCTA.astro';
+import PropertyCard from '../../components/property/PropertyCard.astro';
+import housesData from '../../data/houses.json';
+import { formatPrice } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return housesData.map(house => ({
+    params: { id: house.id },
+    props: { house }
+  }));
+}
+
+const { house } = Astro.props;
+const { id } = Astro.params;
+
+// Get related houses (same status or similar price)
+const relatedHouses = housesData
+  .filter(h => h.id !== id && h.status === 'available')
+  .slice(0, 3);
+
+// Property structured data
+const propertySchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": house.model,
+  "description": house.description.pl,
+  "image": house.images[0],
+  "offers": {
+    "@type": "Offer",
+    "price": house.price,
+    "priceCurrency": "PLN",
+    "availability": house.status === 'available' 
+      ? "https://schema.org/InStock" 
+      : house.status === 'reserved'
+        ? "https://schema.org/PreOrder"
+        : "https://schema.org/SoldOut"
+  }
+};
+---
+
+<BaseLayout 
+  title={`${house.model} - Osiedle Brzozowe Wzgórze`}
+  description={house.shortDescription?.pl || house.description.pl}
+  structuredData={propertySchema}
+>
+  <Navigation />
+  
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-warm-gray-50 py-4">
+      <div class="container-custom">
+        <nav class="flex text-sm text-warm-gray-600">
+          <a href="/" class="hover:text-birch-600 transition-colors">Strona główna</a>
+          <span class="mx-2">/</span>
+          <a href="/domy" class="hover:text-birch-600 transition-colors">Domy</a>
+          <span class="mx-2">/</span>
+          <span class="text-warm-gray-900 font-medium">{house.model}</span>
+        </nav>
+      </div>
+    </div>
+    
+    <!-- Property Header -->
+    <section class="bg-white py-8">
+      <div class="container-custom">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+          <div>
+            <h1 class="font-serif text-3xl md:text-4xl font-bold text-warm-gray-900 mb-2">
+              {house.model}
+            </h1>
+            <div class="flex items-center gap-3">
+              <StatusBadge status={house.status} size="large" />
+              {house.plotNumber && (
+                <span class="text-warm-gray-600">Działka nr {house.plotNumber}</span>
+              )}
+            </div>
+          </div>
+          {house.status !== 'sold' && (
+            <div class="mt-4 md:mt-0">
+              <p class="text-sm text-warm-gray-600 mb-1">Cena</p>
+              <p class="text-3xl font-bold text-warm-gray-900">
+                {formatPrice(house.price, 'pl')}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="bg-warm-gray-50 pb-8">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- Main Image -->
+          <div class="relative aspect-property bg-warm-gray-200 rounded-soft overflow-hidden">
+            <img 
+              src="/images/houses/placeholder-main.jpg" 
+              alt={`${house.model} - widok główny`}
+              class="w-full h-full object-cover"
+            />
+          </div>
+          
+          <!-- Secondary Images Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="relative aspect-property bg-warm-gray-200 rounded-soft overflow-hidden">
+              <img 
+                src="/images/houses/placeholder-2.jpg" 
+                alt={`${house.model} - widok 2`}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-property bg-warm-gray-200 rounded-soft overflow-hidden">
+              <img 
+                src="/images/houses/placeholder-3.jpg" 
+                alt={`${house.model} - widok 3`}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-property bg-warm-gray-200 rounded-soft overflow-hidden">
+              <img 
+                src="/images/houses/placeholder-4.jpg" 
+                alt={`${house.model} - widok 4`}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="relative aspect-property bg-warm-gray-200 rounded-soft overflow-hidden flex items-center justify-center bg-warm-gray-900/80 cursor-pointer hover:bg-warm-gray-900/90 transition-colors">
+              <div class="text-center text-white">
+                <svg class="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-sm font-medium">Zobacz więcej</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Property Details -->
+    <section class="bg-white section-padding">
+      <div class="container-custom">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- Main Content -->
+          <div class="lg:col-span-2">
+            <!-- Key Features -->
+            <div class="mb-8">
+              <h2 class="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
+                Kluczowe informacje
+              </h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Powierzchnia użytkowa</p>
+                    <p class="font-semibold text-warm-gray-900">{house.area} m²</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Powierzchnia działki</p>
+                    <p class="font-semibold text-warm-gray-900">{house.plotArea} m²</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Liczba pokoi</p>
+                    <p class="font-semibold text-warm-gray-900">{house.rooms} pokoi</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Liczba pięter</p>
+                    <p class="font-semibold text-warm-gray-900">{house.floors} piętra</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Garaż</p>
+                    <p class="font-semibold text-warm-gray-900">
+                      {house.garage ? `Tak${house.garageSpaces ? ` (${house.garageSpaces} miejsca)` : ''}` : 'Nie'}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-4 bg-warm-gray-50 rounded-soft">
+                  <svg class="w-5 h-5 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  <div>
+                    <p class="text-sm text-warm-gray-600">Termin realizacji</p>
+                    <p class="font-semibold text-warm-gray-900">{house.completionDate || 'Do ustalenia'}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="mb-8">
+              <h2 class="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
+                Opis
+              </h2>
+              <p class="text-warm-gray-700 leading-relaxed">
+                {house.description.pl}
+              </p>
+            </div>
+            
+            <!-- Features -->
+            {house.features && house.features.pl && (
+              <div class="mb-8">
+                <h2 class="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
+                  Udogodnienia
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-3">
+                  {(Array.isArray(house.features.pl) ? house.features.pl : []).map((feature: string) => (
+                    <div class="flex items-center space-x-2">
+                      <svg class="w-5 h-5 text-birch-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span class="text-warm-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <!-- Floor Plans -->
+            <div>
+              <h2 class="font-serif text-2xl font-semibold text-warm-gray-900 mb-4">
+                Rzuty pięter
+              </h2>
+              <div class="bg-warm-gray-100 rounded-soft p-8 text-center">
+                <svg class="w-12 h-12 text-warm-gray-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                <p class="text-warm-gray-600">Rzuty pięter dostępne do pobrania</p>
+                <button class="btn-primary mt-4 text-sm">
+                  Pobierz rzuty PDF
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sidebar -->
+          <div class="lg:col-span-1">
+            <div class="sticky top-24">
+              <!-- Contact Card -->
+              <div class="bg-warm-gray-50 rounded-soft p-6 mb-6">
+                <h3 class="font-serif text-xl font-semibold text-warm-gray-900 mb-4">
+                  Zainteresowany?
+                </h3>
+                <p class="text-warm-gray-600 mb-6">
+                  Skontaktuj się z nami, aby umówić się na prezentację tego domu.
+                </p>
+                
+                <ContactCTA houseModel={house.model} className="flex-col" />
+                
+                <div class="mt-6 pt-6 border-t border-warm-gray-200">
+                  <p class="text-sm text-warm-gray-600 mb-2">Osoba kontaktowa:</p>
+                  <p class="font-semibold text-warm-gray-900">Roland Garus</p>
+                  <p class="text-sm text-warm-gray-600">668 374 950</p>
+                </div>
+              </div>
+              
+              <!-- Location Info -->
+              <div class="bg-birch-50 rounded-soft p-6">
+                <h3 class="font-serif text-xl font-semibold text-warm-gray-900 mb-3">
+                  Lokalizacja
+                </h3>
+                <ul class="space-y-2 text-sm text-warm-gray-700">
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span>Osiedle Brzozowe Wzgórze, Brzeziny</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span>5 km do centrum miasta</span>
+                  </li>
+                  <li class="flex items-start space-x-2">
+                    <svg class="w-4 h-4 text-birch-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span>Spokojna, zielona okolica</span>
+                  </li>
+                </ul>
+                
+                <a href="/kontakt#mapa" class="btn-secondary w-full justify-center mt-4 text-sm">
+                  Zobacz na mapie
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Related Properties -->
+    {relatedHouses.length > 0 && (
+      <section class="bg-warm-gray-50 section-padding">
+        <div class="container-custom">
+          <h2 class="font-serif text-2xl md:text-3xl font-semibold text-warm-gray-900 mb-6">
+            Zobacz także
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            {relatedHouses.map(relatedHouse => (
+              <PropertyCard house={relatedHouse} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+  </main>
+  
+  <Footer />
+</BaseLayout>

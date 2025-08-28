@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Custom CSS Properties for easy theming */
+    --color-primary: theme('colors.birch.500');
+    --color-secondary: theme('colors.wood.DEFAULT');
+    --color-accent: theme('colors.sage');
+    
+    /* Spacing rhythm */
+    --space-unit: 1rem;
+    
+    /* Z-index scale */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-warm-gray-900;
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-birch-500;
+  }
+
+  /* Ensure images are responsive by default */
+  img,
+  video {
+    @apply max-w-full h-auto;
+  }
+
+  /* Typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium text-warm-gray-900;
+  }
+
+  h1 { @apply text-3xl md:text-4xl lg:text-5xl; }
+  h2 { @apply text-2xl md:text-3xl lg:text-4xl; }
+  h3 { @apply text-xl md:text-2xl lg:text-3xl; }
+  h4 { @apply text-lg md:text-xl lg:text-2xl; }
+  h5 { @apply text-base md:text-lg lg:text-xl; }
+  h6 { @apply text-sm md:text-base lg:text-lg; }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Better link defaults */
+  a {
+    @apply text-birch-600 hover:text-birch-700 transition-colors;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    @apply w-full px-4 py-2 border border-warm-gray-300 rounded-soft;
+    @apply focus:border-birch-500 focus:ring-2 focus:ring-birch-500 focus:ring-opacity-20;
+    @apply transition-colors duration-200;
+  }
+
+  /* Loading skeleton animation */
+  @keyframes skeleton-loading {
+    0% { background-color: theme('colors.warm-gray.100'); }
+    50% { background-color: theme('colors.warm-gray.200'); }
+    100% { background-color: theme('colors.warm-gray.100'); }
+  }
+}
+
+@layer components {
+  /* Property card hover effect */
+  .property-card {
+    @apply transition-all duration-300;
+  }
+  
+  .property-card:hover {
+    @apply -translate-y-1 shadow-warm;
+  }
+
+  /* Mobile-optimized touch targets */
+  .touch-target {
+    @apply relative;
+  }
+  
+  .touch-target::before {
+    content: '';
+    @apply absolute -inset-2;
+  }
+
+  /* Gradient overlays for images */
+  .gradient-overlay {
+    @apply relative overflow-hidden;
+  }
+  
+  .gradient-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent;
+  }
+
+  /* Status badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-available {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .badge-reserved {
+    @apply bg-orange-100 text-orange-800;
+  }
+  
+  .badge-sold {
+    @apply bg-red-100 text-red-800;
+  }
+
+  /* Mobile menu toggle animation */
+  .hamburger {
+    @apply w-6 h-5 relative;
+  }
+  
+  .hamburger span {
+    @apply absolute left-0 w-full h-0.5 bg-current transition-all duration-300;
+  }
+  
+  .hamburger span:nth-child(1) { @apply top-0; }
+  .hamburger span:nth-child(2) { @apply top-1/2 -translate-y-1/2; }
+  .hamburger span:nth-child(3) { @apply bottom-0; }
+  
+  .hamburger.active span:nth-child(1) {
+    @apply top-1/2 -translate-y-1/2 rotate-45;
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    @apply opacity-0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    @apply bottom-1/2 translate-y-1/2 -rotate-45;
+  }
+
+  /* Swiper custom styles */
+  .swiper {
+    @apply w-full h-full;
+  }
+  
+  .swiper-pagination-bullet {
+    @apply bg-white/50;
+  }
+  
+  .swiper-pagination-bullet-active {
+    @apply bg-white;
+  }
+}
+
+@layer utilities {
+  /* Text balancing for better readability */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Mask utilities */
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 80%, transparent);
+  }
+
+  /* Safe area insets for mobile */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Performance optimizations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Preserve aspect ratios */
+  .aspect-property {
+    @apply aspect-[4/3];
+  }
+  
+  .aspect-floor-plan {
+    @apply aspect-[3/4] md:aspect-[4/3];
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+  
+  a {
+    @apply text-black underline;
+  }
+}

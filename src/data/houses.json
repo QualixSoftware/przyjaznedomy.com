@@ -1,0 +1,258 @@
+[
+  {
+    "id": "dom-01",
+    "model": "Brzoza Premium",
+    "status": "available",
+    "price": 850000,
+    "area": 145,
+    "plotArea": 800,
+    "rooms": 5,
+    "bathrooms": 2,
+    "floors": 2,
+    "garage": true,
+    "garageSpaces": 2,
+    "garden": true,
+    "terrace": true,
+    "images": [
+      "/images/houses/dom-01-front.jpg",
+      "/images/houses/dom-01-side.jpg",
+      "/images/houses/dom-01-back.jpg",
+      "/images/houses/dom-01-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-01-ground.pdf",
+      "/images/plans/dom-01-first.pdf"
+    ],
+    "features": {
+      "pl": ["Garaż dwustanowiskowy", "Duży taras", "Ogród 400m²", "Kominek", "System alarmowy", "Klimatyzacja"],
+      "en": ["Two-car garage", "Large terrace", "400m² garden", "Fireplace", "Alarm system", "Air conditioning"],
+      "de": ["Doppelgarage", "Große Terrasse", "400m² Garten", "Kamin", "Alarmsystem", "Klimaanlage"]
+    },
+    "description": {
+      "pl": "Przestronny dom z linii Premium, idealny dla rodziny. Nowoczesna architektura łączy się z funkcjonalnością. Duże przeszklenia zapewniają doskonałe doświetlenie wnętrz.",
+      "en": "Spacious home from the Premium line, perfect for a family. Modern architecture combines with functionality. Large glazing provides excellent interior lighting.",
+      "de": "Geräumiges Haus aus der Premium-Linie, perfekt für eine Familie. Moderne Architektur verbindet sich mit Funktionalität. Große Verglasungen sorgen für hervorragende Innenbeleuchtung."
+    },
+    "shortDescription": {
+      "pl": "Przestronny dom rodzinny z garażem dwustanowiskowym",
+      "en": "Spacious family home with two-car garage",
+      "de": "Geräumiges Familienhaus mit Doppelgarage"
+    },
+    "completionDate": "2024-09",
+    "energyClass": "A+",
+    "plotNumber": "A1"
+  },
+  {
+    "id": "dom-02",
+    "model": "Brzoza Comfort",
+    "status": "available",
+    "price": 750000,
+    "area": 125,
+    "plotArea": 650,
+    "rooms": 4,
+    "bathrooms": 2,
+    "floors": 2,
+    "garage": true,
+    "garageSpaces": 1,
+    "garden": true,
+    "terrace": true,
+    "images": [
+      "/images/houses/dom-02-front.jpg",
+      "/images/houses/dom-02-side.jpg",
+      "/images/houses/dom-02-back.jpg",
+      "/images/houses/dom-02-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-02-ground.pdf",
+      "/images/plans/dom-02-first.pdf"
+    ],
+    "features": {
+      "pl": ["Garaż jednostanowiskowy", "Taras", "Ogród 350m²", "Piwnica", "System alarmowy"],
+      "en": ["Single garage", "Terrace", "350m² garden", "Basement", "Alarm system"],
+      "de": ["Einzelgarage", "Terrasse", "350m² Garten", "Keller", "Alarmsystem"]
+    },
+    "description": {
+      "pl": "Komfortowy dom z optymalnym układem pomieszczeń. Idealny dla 4-osobowej rodziny. Energooszczędne rozwiązania gwarantują niskie koszty eksploatacji.",
+      "en": "Comfortable home with optimal room layout. Ideal for a family of 4. Energy-efficient solutions guarantee low operating costs.",
+      "de": "Komfortables Haus mit optimaler Raumaufteilung. Ideal für eine 4-köpfige Familie. Energieeffiziente Lösungen garantieren niedrige Betriebskosten."
+    },
+    "shortDescription": {
+      "pl": "Komfortowy dom dla rodziny",
+      "en": "Comfortable family home",
+      "de": "Komfortables Familienhaus"
+    },
+    "completionDate": "2024-08",
+    "energyClass": "A",
+    "plotNumber": "A2"
+  },
+  {
+    "id": "dom-03",
+    "model": "Brzoza Classic",
+    "status": "reserved",
+    "price": 680000,
+    "area": 110,
+    "plotArea": 600,
+    "rooms": 4,
+    "bathrooms": 1,
+    "floors": 2,
+    "garage": true,
+    "garageSpaces": 1,
+    "garden": true,
+    "terrace": false,
+    "images": [
+      "/images/houses/dom-03-front.jpg",
+      "/images/houses/dom-03-side.jpg",
+      "/images/houses/dom-03-back.jpg",
+      "/images/houses/dom-03-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-03-ground.pdf",
+      "/images/plans/dom-03-first.pdf"
+    ],
+    "features": {
+      "pl": ["Garaż", "Ogród 300m²", "Balkon", "System alarmowy"],
+      "en": ["Garage", "300m² garden", "Balcony", "Alarm system"],
+      "de": ["Garage", "300m² Garten", "Balkon", "Alarmsystem"]
+    },
+    "description": {
+      "pl": "Klasyczny dom w przystępnej cenie. Przemyślany projekt zapewnia komfort mieszkania. Idealny jako pierwszy dom dla młodej rodziny.",
+      "en": "Classic home at an affordable price. Thoughtful design ensures living comfort. Ideal as a first home for a young family.",
+      "de": "Klassisches Haus zu einem erschwinglichen Preis. Durchdachtes Design sorgt für Wohnkomfort. Ideal als erstes Zuhause für eine junge Familie."
+    },
+    "shortDescription": {
+      "pl": "Klasyczny dom w przystępnej cenie",
+      "en": "Classic home at an affordable price",
+      "de": "Klassisches Haus zu einem erschwinglichen Preis"
+    },
+    "completionDate": "2024-07",
+    "energyClass": "A",
+    "plotNumber": "B1"
+  },
+  {
+    "id": "dom-04",
+    "model": "Brzoza Modern",
+    "status": "available",
+    "price": 920000,
+    "area": 160,
+    "plotArea": 900,
+    "rooms": 5,
+    "bathrooms": 3,
+    "floors": 2,
+    "garage": true,
+    "garageSpaces": 2,
+    "garden": true,
+    "terrace": true,
+    "images": [
+      "/images/houses/dom-04-front.jpg",
+      "/images/houses/dom-04-side.jpg",
+      "/images/houses/dom-04-back.jpg",
+      "/images/houses/dom-04-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-04-ground.pdf",
+      "/images/plans/dom-04-first.pdf"
+    ],
+    "features": {
+      "pl": ["Garaż dwustanowiskowy", "Duży taras 40m²", "Ogród 500m²", "Sauna", "Kominek", "System Smart Home", "Klimatyzacja"],
+      "en": ["Two-car garage", "Large 40m² terrace", "500m² garden", "Sauna", "Fireplace", "Smart Home system", "Air conditioning"],
+      "de": ["Doppelgarage", "Große 40m² Terrasse", "500m² Garten", "Sauna", "Kamin", "Smart Home System", "Klimaanlage"]
+    },
+    "description": {
+      "pl": "Nowoczesny dom z najwyższej półki. Wyposażony w system Smart Home i saunę. Przestronne wnętrza i duże przeszklenia tworzą wyjątkową atmosferę.",
+      "en": "Modern top-shelf home. Equipped with Smart Home system and sauna. Spacious interiors and large glazing create a unique atmosphere.",
+      "de": "Modernes erstklassiges Haus. Ausgestattet mit Smart Home System und Sauna. Geräumige Innenräume und große Verglasungen schaffen eine einzigartige Atmosphäre."
+    },
+    "shortDescription": {
+      "pl": "Luksusowy dom z systemem Smart Home",
+      "en": "Luxury home with Smart Home system",
+      "de": "Luxushaus mit Smart Home System"
+    },
+    "completionDate": "2024-10",
+    "energyClass": "A++",
+    "plotNumber": "C1"
+  },
+  {
+    "id": "dom-05",
+    "model": "Brzoza Compact",
+    "status": "sold",
+    "price": 590000,
+    "area": 95,
+    "plotArea": 500,
+    "rooms": 3,
+    "bathrooms": 1,
+    "floors": 1,
+    "garage": false,
+    "garden": true,
+    "terrace": true,
+    "images": [
+      "/images/houses/dom-05-front.jpg",
+      "/images/houses/dom-05-side.jpg",
+      "/images/houses/dom-05-back.jpg",
+      "/images/houses/dom-05-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-05-ground.pdf"
+    ],
+    "features": {
+      "pl": ["Parking", "Taras", "Ogród 250m²", "Wszystko na jednym poziomie"],
+      "en": ["Parking", "Terrace", "250m² garden", "Single-story living"],
+      "de": ["Parkplatz", "Terrasse", "250m² Garten", "Einstöckiges Wohnen"]
+    },
+    "description": {
+      "pl": "Kompaktowy dom parterowy, idealny dla pary lub małej rodziny. Brak schodów czyni go dostępnym dla osób starszych.",
+      "en": "Compact single-story home, ideal for a couple or small family. No stairs makes it accessible for elderly.",
+      "de": "Kompaktes einstöckiges Haus, ideal für ein Paar oder eine kleine Familie. Keine Treppen machen es für ältere Menschen zugänglich."
+    },
+    "shortDescription": {
+      "pl": "Kompaktowy dom parterowy",
+      "en": "Compact single-story home",
+      "de": "Kompaktes einstöckiges Haus"
+    },
+    "completionDate": "2024-06",
+    "energyClass": "B+",
+    "plotNumber": "D1"
+  },
+  {
+    "id": "dom-06",
+    "model": "Brzoza Premium Plus",
+    "status": "available",
+    "price": 1100000,
+    "area": 180,
+    "plotArea": 1000,
+    "rooms": 6,
+    "bathrooms": 3,
+    "floors": 2,
+    "garage": true,
+    "garageSpaces": 2,
+    "garden": true,
+    "terrace": true,
+    "images": [
+      "/images/houses/dom-06-front.jpg",
+      "/images/houses/dom-06-side.jpg",
+      "/images/houses/dom-06-back.jpg",
+      "/images/houses/dom-06-interior.jpg"
+    ],
+    "floorPlans": [
+      "/images/plans/dom-06-ground.pdf",
+      "/images/plans/dom-06-first.pdf"
+    ],
+    "features": {
+      "pl": ["Garaż dwustanowiskowy", "Dwa tarasy", "Ogród 600m²", "Basen", "Sauna", "Kominek", "System Smart Home", "Klimatyzacja", "Winda"],
+      "en": ["Two-car garage", "Two terraces", "600m² garden", "Pool", "Sauna", "Fireplace", "Smart Home system", "Air conditioning", "Elevator"],
+      "de": ["Doppelgarage", "Zwei Terrassen", "600m² Garten", "Pool", "Sauna", "Kamin", "Smart Home System", "Klimaanlage", "Aufzug"]
+    },
+    "description": {
+      "pl": "Ekskluzywny dom z basenem i windą. Najwyższa jakość wykończenia i wyposażenia. Dla najbardziej wymagających klientów.",
+      "en": "Exclusive home with pool and elevator. Highest quality finishes and equipment. For the most demanding clients.",
+      "de": "Exklusives Haus mit Pool und Aufzug. Höchste Qualität der Ausstattung und Ausrüstung. Für die anspruchsvollsten Kunden."
+    },
+    "shortDescription": {
+      "pl": "Ekskluzywny dom z basenem",
+      "en": "Exclusive home with pool",
+      "de": "Exklusives Haus mit Pool"
+    },
+    "completionDate": "2024-12",
+    "energyClass": "A++",
+    "plotNumber": "E1"
+  }
+]

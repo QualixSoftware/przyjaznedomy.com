@@ -1,0 +1,4 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#E8E6E1"/>
+    <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="24" fill="#8B8680" text-anchor="middle" dy=".3em">Widok z lotu ptaka</text>
+  </svg>

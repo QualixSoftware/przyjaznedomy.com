@@ -1,0 +1,237 @@
+---
+export const prerender = false;
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import housesData from '../../data/houses.json';
+import { COMPANY } from '../../lib/constants';
+
+// Simple authentication check (in production, use Cloudflare Access)
+const isAuthenticated = true; // This would check session/auth in production
+---
+
+<BaseLayout 
+  title="Panel Administracyjny - FALCO INVESTMENTS"
+  noindex={true}
+>
+  <div class="min-h-screen bg-warm-gray-50">
+    <!-- Admin Header -->
+    <header class="bg-white shadow-sm border-b border-warm-gray-200">
+      <div class="container-custom py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <a href="/" class="text-birch-600 hover:text-birch-700">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+            </a>
+            <h1 class="text-xl font-semibold text-warm-gray-900">Panel Administracyjny</h1>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="text-sm text-warm-gray-600">Admin: {COMPANY.contactPerson}</span>
+            <button class="text-sm text-red-600 hover:text-red-700 font-medium">
+              Wyloguj
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-custom py-8">
+      <!-- Stats Cards -->
+      <div class="grid md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white p-6 rounded-soft shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-warm-gray-600">Wszystkie domy</span>
+            <svg class="w-5 h-5 text-warm-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <p class="text-2xl font-bold text-warm-gray-900">{housesData.length}</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-soft shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-warm-gray-600">Dostępne</span>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+          </div>
+          <p class="text-2xl font-bold text-warm-gray-900">
+            {housesData.filter(h => h.status === 'available').length}
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-soft shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-warm-gray-600">Zarezerwowane</span>
+            <div class="w-3 h-3 bg-orange-500 rounded-full"></div>
+          </div>
+          <p class="text-2xl font-bold text-warm-gray-900">
+            {housesData.filter(h => h.status === 'reserved').length}
+          </p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-soft shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-warm-gray-600">Sprzedane</span>
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+          </div>
+          <p class="text-2xl font-bold text-warm-gray-900">
+            {housesData.filter(h => h.status === 'sold').length}
+          </p>
+        </div>
+      </div>
+
+      <!-- Properties Management -->
+      <div class="bg-white rounded-soft shadow-sm">
+        <div class="p-6 border-b border-warm-gray-200">
+          <h2 class="text-lg font-semibold text-warm-gray-900">Zarządzanie statusem domów</h2>
+          <p class="text-sm text-warm-gray-600 mt-1">
+            Kliknij na status aby go zmienić. Zmiany są zapisywane automatycznie.
+          </p>
+        </div>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-warm-gray-50 border-b border-warm-gray-200">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  ID
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Model
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Działka
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Cena
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Powierzchnia
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Status
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-warm-gray-500 uppercase tracking-wider">
+                  Akcje
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-warm-gray-200">
+              {housesData.map((house) => (
+                <tr class="hover:bg-warm-gray-50 transition-colors">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-warm-gray-900">
+                    {house.id}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-warm-gray-900">
+                    {house.model}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-warm-gray-600">
+                    {house.plotNumber || '-'}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-warm-gray-900">
+                    {new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', minimumFractionDigits: 0 }).format(house.price)}
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-warm-gray-600">
+                    {house.area} m²
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <select 
+                      data-house-id={house.id}
+                      class="status-select text-sm border border-warm-gray-300 rounded-soft px-3 py-1.5 focus:ring-2 focus:ring-birch-500 focus:border-birch-500"
+                    >
+                      <option value="available" selected={house.status === 'available'}>Dostępny</option>
+                      <option value="reserved" selected={house.status === 'reserved'}>Zarezerwowany</option>
+                      <option value="sold" selected={house.status === 'sold'}>Sprzedany</option>
+                    </select>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <a 
+                      href={`/domy/${house.id}`}
+                      target="_blank"
+                      class="text-birch-600 hover:text-birch-700 font-medium"
+                    >
+                      Zobacz →
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Activity Log -->
+      <div class="mt-8 bg-white rounded-soft shadow-sm">
+        <div class="p-6 border-b border-warm-gray-200">
+          <h2 class="text-lg font-semibold text-warm-gray-900">Ostatnie zmiany</h2>
+        </div>
+        <div class="p-6">
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-green-500 rounded-full mt-1.5"></div>
+              <div>
+                <p class="text-sm text-warm-gray-900">Status domu <strong>dom-02</strong> zmieniony na <strong>dostępny</strong></p>
+                <p class="text-xs text-warm-gray-500">2 godziny temu</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-orange-500 rounded-full mt-1.5"></div>
+              <div>
+                <p class="text-sm text-warm-gray-900">Status domu <strong>dom-03</strong> zmieniony na <strong>zarezerwowany</strong></p>
+                <p class="text-xs text-warm-gray-500">Wczoraj o 14:30</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-3">
+              <div class="w-2 h-2 bg-red-500 rounded-full mt-1.5"></div>
+              <div>
+                <p class="text-sm text-warm-gray-900">Status domu <strong>dom-05</strong> zmieniony na <strong>sprzedany</strong></p>
+                <p class="text-xs text-warm-gray-500">3 dni temu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Handle status changes
+    document.querySelectorAll('.status-select').forEach(select => {
+      select.addEventListener('change', async (e) => {
+        const target = e.target as HTMLSelectElement;
+        const houseId = target.dataset.houseId;
+        const newStatus = target.value;
+        
+        // Visual feedback
+        target.classList.add('bg-green-100');
+        
+        try {
+          // In production, this would make an API call to update KV storage
+          const response = await fetch('/api/admin/update-status', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              houseId,
+              status: newStatus
+            })
+          });
+
+          if (response.ok) {
+            // Success feedback
+            setTimeout(() => {
+              target.classList.remove('bg-green-100');
+              target.classList.add('bg-green-50');
+            }, 500);
+          }
+        } catch (error) {
+          // Error handling
+          target.classList.remove('bg-green-100');
+          target.classList.add('bg-red-100');
+          console.error('Failed to update status:', error);
+        }
+      });
+    });
+  </script>
+</BaseLayout>

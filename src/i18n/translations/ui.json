@@ -1,0 +1,401 @@
+{
+  "pl": {
+    "nav": {
+      "home": "Strona główna",
+      "investment": "Inwestycja",
+      "houses": "Dostępne domy",
+      "about": "O nas",
+      "contact": "Kontakt",
+      "gallery": "Galeria",
+      "location": "Lokalizacja"
+    },
+    "hero": {
+      "title": "Osiedle Brzozowe Wzgórze",
+      "subtitle": "Twój wymarzony dom w otoczeniu natury",
+      "cta": "Zobacz dostępne domy",
+      "ctaSecondary": "Pobierz katalog"
+    },
+    "property": {
+      "available": "Dostępny",
+      "reserved": "Zarezerwowany",
+      "sold": "Sprzedany",
+      "area": "Powierzchnia",
+      "plotArea": "Działka",
+      "rooms": "Pokoje",
+      "bathrooms": "Łazienki",
+      "price": "Cena",
+      "priceFrom": "Cena od",
+      "garage": "Garaż",
+      "garageYes": "Tak",
+      "garageNo": "Nie",
+      "floors": "Piętra",
+      "completionDate": "Termin realizacji",
+      "viewDetails": "Zobacz szczegóły",
+      "askAboutProperty": "Zapytaj o ten dom",
+      "downloadFloorPlan": "Pobierz rzuty",
+      "schedule": "Umów wizytę",
+      "morePhotos": "Więcej zdjęć"
+    },
+    "contact": {
+      "title": "Skontaktuj się z nami",
+      "subtitle": "Odpowiemy na wszystkie Twoje pytania",
+      "whatsapp": "Napisz na WhatsApp",
+      "call": "Zadzwoń teraz",
+      "email": "Wyślij email",
+      "form": {
+        "name": "Imię i nazwisko",
+        "email": "Email",
+        "phone": "Telefon",
+        "message": "Wiadomość",
+        "propertyInterest": "Interesuje mnie dom",
+        "send": "Wyślij wiadomość",
+        "sending": "Wysyłanie...",
+        "success": "Wiadomość została wysłana!",
+        "error": "Wystąpił błąd. Spróbuj ponownie.",
+        "gdprConsent": "Wyrażam zgodę na przetwarzanie moich danych osobowych"
+      },
+      "office": {
+        "title": "Biuro sprzedaży",
+        "address": "Adres",
+        "hours": "Godziny otwarcia",
+        "weekdays": "Poniedziałek - Piątek",
+        "saturday": "Sobota",
+        "sunday": "Niedziela",
+        "closed": "Zamknięte"
+      }
+    },
+    "about": {
+      "title": "O inwestycji",
+      "subtitle": "Nowoczesne osiedle w harmonii z naturą",
+      "description": "Osiedle Brzozowe Wzgórze to wyjątkowe miejsce, gdzie nowoczesna architektura spotyka się z pięknem natury.",
+      "whyUs": {
+        "title": "Dlaczego warto wybrać nasze osiedle?",
+        "quality": "Najwyższa jakość wykonania",
+        "location": "Doskonała lokalizacja",
+        "nature": "Bliskość natury",
+        "safety": "Bezpieczne osiedle",
+        "infrastructure": "Pełna infrastruktura",
+        "design": "Nowoczesny design"
+      }
+    },
+    "footer": {
+      "company": "Firma",
+      "quickLinks": "Szybkie linki",
+      "followUs": "Obserwuj nas",
+      "newsletter": {
+        "title": "Newsletter",
+        "subtitle": "Bądź na bieżąco z naszymi ofertami",
+        "placeholder": "Twój adres email",
+        "subscribe": "Zapisz się"
+      },
+      "legal": {
+        "privacy": "Polityka prywatności",
+        "terms": "Regulamin",
+        "cookies": "Polityka cookies"
+      },
+      "copyright": "Wszelkie prawa zastrzeżone"
+    },
+    "filters": {
+      "title": "Filtruj domy",
+      "status": "Status",
+      "priceRange": "Zakres cenowy",
+      "areaRange": "Powierzchnia",
+      "roomCount": "Liczba pokoi",
+      "features": "Udogodnienia",
+      "apply": "Zastosuj filtry",
+      "clear": "Wyczyść",
+      "showing": "Pokazywanie",
+      "of": "z",
+      "results": "wyników"
+    },
+    "common": {
+      "loading": "Ładowanie...",
+      "error": "Wystąpił błąd",
+      "tryAgain": "Spróbuj ponownie",
+      "viewAll": "Zobacz wszystkie",
+      "close": "Zamknij",
+      "open": "Otwórz",
+      "yes": "Tak",
+      "no": "Nie",
+      "from": "od",
+      "to": "do",
+      "currency": "PLN",
+      "squareMeters": "m²",
+      "pieces": "szt.",
+      "readMore": "Czytaj więcej",
+      "readLess": "Czytaj mniej"
+    },
+    "cookie": {
+      "message": "Ta strona używa plików cookie, aby zapewnić najlepsze doświadczenia.",
+      "accept": "Akceptuję",
+      "decline": "Odrzuć",
+      "moreInfo": "Więcej informacji"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "investment": "Investment",
+      "houses": "Available houses",
+      "about": "About",
+      "contact": "Contact",
+      "gallery": "Gallery",
+      "location": "Location"
+    },
+    "hero": {
+      "title": "Brzozowe Wzgórze Estate",
+      "subtitle": "Your dream home surrounded by nature",
+      "cta": "View available houses",
+      "ctaSecondary": "Download catalog"
+    },
+    "property": {
+      "available": "Available",
+      "reserved": "Reserved",
+      "sold": "Sold",
+      "area": "Area",
+      "plotArea": "Plot",
+      "rooms": "Rooms",
+      "bathrooms": "Bathrooms",
+      "price": "Price",
+      "priceFrom": "Price from",
+      "garage": "Garage",
+      "garageYes": "Yes",
+      "garageNo": "No",
+      "floors": "Floors",
+      "completionDate": "Completion date",
+      "viewDetails": "View details",
+      "askAboutProperty": "Ask about this house",
+      "downloadFloorPlan": "Download floor plans",
+      "schedule": "Schedule a visit",
+      "morePhotos": "More photos"
+    },
+    "contact": {
+      "title": "Contact us",
+      "subtitle": "We'll answer all your questions",
+      "whatsapp": "Message on WhatsApp",
+      "call": "Call now",
+      "email": "Send email",
+      "form": {
+        "name": "Full name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "Message",
+        "propertyInterest": "I'm interested in house",
+        "send": "Send message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "An error occurred. Please try again.",
+        "gdprConsent": "I consent to the processing of my personal data"
+      },
+      "office": {
+        "title": "Sales office",
+        "address": "Address",
+        "hours": "Opening hours",
+        "weekdays": "Monday - Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "closed": "Closed"
+      }
+    },
+    "about": {
+      "title": "About the investment",
+      "subtitle": "Modern estate in harmony with nature",
+      "description": "Brzozowe Wzgórze Estate is a unique place where modern architecture meets the beauty of nature.",
+      "whyUs": {
+        "title": "Why choose our estate?",
+        "quality": "Highest quality construction",
+        "location": "Excellent location",
+        "nature": "Close to nature",
+        "safety": "Safe estate",
+        "infrastructure": "Full infrastructure",
+        "design": "Modern design"
+      }
+    },
+    "footer": {
+      "company": "Company",
+      "quickLinks": "Quick links",
+      "followUs": "Follow us",
+      "newsletter": {
+        "title": "Newsletter",
+        "subtitle": "Stay up to date with our offers",
+        "placeholder": "Your email address",
+        "subscribe": "Subscribe"
+      },
+      "legal": {
+        "privacy": "Privacy policy",
+        "terms": "Terms of service",
+        "cookies": "Cookie policy"
+      },
+      "copyright": "All rights reserved"
+    },
+    "filters": {
+      "title": "Filter houses",
+      "status": "Status",
+      "priceRange": "Price range",
+      "areaRange": "Area",
+      "roomCount": "Number of rooms",
+      "features": "Features",
+      "apply": "Apply filters",
+      "clear": "Clear",
+      "showing": "Showing",
+      "of": "of",
+      "results": "results"
+    },
+    "common": {
+      "loading": "Loading...",
+      "error": "An error occurred",
+      "tryAgain": "Try again",
+      "viewAll": "View all",
+      "close": "Close",
+      "open": "Open",
+      "yes": "Yes",
+      "no": "No",
+      "from": "from",
+      "to": "to",
+      "currency": "PLN",
+      "squareMeters": "m²",
+      "pieces": "pcs",
+      "readMore": "Read more",
+      "readLess": "Read less"
+    },
+    "cookie": {
+      "message": "This site uses cookies to provide the best experience.",
+      "accept": "Accept",
+      "decline": "Decline",
+      "moreInfo": "More information"
+    }
+  },
+  "de": {
+    "nav": {
+      "home": "Startseite",
+      "investment": "Investition",
+      "houses": "Verfügbare Häuser",
+      "about": "Über uns",
+      "contact": "Kontakt",
+      "gallery": "Galerie",
+      "location": "Standort"
+    },
+    "hero": {
+      "title": "Wohnsiedlung Brzozowe Wzgórze",
+      "subtitle": "Ihr Traumhaus umgeben von Natur",
+      "cta": "Verfügbare Häuser ansehen",
+      "ctaSecondary": "Katalog herunterladen"
+    },
+    "property": {
+      "available": "Verfügbar",
+      "reserved": "Reserviert",
+      "sold": "Verkauft",
+      "area": "Fläche",
+      "plotArea": "Grundstück",
+      "rooms": "Zimmer",
+      "bathrooms": "Badezimmer",
+      "price": "Preis",
+      "priceFrom": "Preis ab",
+      "garage": "Garage",
+      "garageYes": "Ja",
+      "garageNo": "Nein",
+      "floors": "Etagen",
+      "completionDate": "Fertigstellungstermin",
+      "viewDetails": "Details anzeigen",
+      "askAboutProperty": "Fragen zu diesem Haus",
+      "downloadFloorPlan": "Grundrisse herunterladen",
+      "schedule": "Besichtigung vereinbaren",
+      "morePhotos": "Mehr Fotos"
+    },
+    "contact": {
+      "title": "Kontaktieren Sie uns",
+      "subtitle": "Wir beantworten alle Ihre Fragen",
+      "whatsapp": "Nachricht auf WhatsApp",
+      "call": "Jetzt anrufen",
+      "email": "E-Mail senden",
+      "form": {
+        "name": "Vollständiger Name",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "message": "Nachricht",
+        "propertyInterest": "Ich interessiere mich für das Haus",
+        "send": "Nachricht senden",
+        "sending": "Senden...",
+        "success": "Nachricht erfolgreich gesendet!",
+        "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+        "gdprConsent": "Ich stimme der Verarbeitung meiner persönlichen Daten zu"
+      },
+      "office": {
+        "title": "Verkaufsbüro",
+        "address": "Adresse",
+        "hours": "Öffnungszeiten",
+        "weekdays": "Montag - Freitag",
+        "saturday": "Samstag",
+        "sunday": "Sonntag",
+        "closed": "Geschlossen"
+      }
+    },
+    "about": {
+      "title": "Über die Investition",
+      "subtitle": "Moderne Siedlung im Einklang mit der Natur",
+      "description": "Die Wohnsiedlung Brzozowe Wzgórze ist ein einzigartiger Ort, an dem moderne Architektur auf die Schönheit der Natur trifft.",
+      "whyUs": {
+        "title": "Warum unsere Siedlung wählen?",
+        "quality": "Höchste Bauqualität",
+        "location": "Ausgezeichnete Lage",
+        "nature": "Nähe zur Natur",
+        "safety": "Sichere Siedlung",
+        "infrastructure": "Vollständige Infrastruktur",
+        "design": "Modernes Design"
+      }
+    },
+    "footer": {
+      "company": "Unternehmen",
+      "quickLinks": "Schnelllinks",
+      "followUs": "Folgen Sie uns",
+      "newsletter": {
+        "title": "Newsletter",
+        "subtitle": "Bleiben Sie über unsere Angebote informiert",
+        "placeholder": "Ihre E-Mail-Adresse",
+        "subscribe": "Abonnieren"
+      },
+      "legal": {
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen",
+        "cookies": "Cookie-Richtlinie"
+      },
+      "copyright": "Alle Rechte vorbehalten"
+    },
+    "filters": {
+      "title": "Häuser filtern",
+      "status": "Status",
+      "priceRange": "Preisbereich",
+      "areaRange": "Fläche",
+      "roomCount": "Anzahl der Zimmer",
+      "features": "Ausstattung",
+      "apply": "Filter anwenden",
+      "clear": "Löschen",
+      "showing": "Anzeigen",
+      "of": "von",
+      "results": "Ergebnissen"
+    },
+    "common": {
+      "loading": "Laden...",
+      "error": "Ein Fehler ist aufgetreten",
+      "tryAgain": "Erneut versuchen",
+      "viewAll": "Alle anzeigen",
+      "close": "Schließen",
+      "open": "Öffnen",
+      "yes": "Ja",
+      "no": "Nein",
+      "from": "von",
+      "to": "bis",
+      "currency": "PLN",
+      "squareMeters": "m²",
+      "pieces": "Stk.",
+      "readMore": "Mehr lesen",
+      "readLess": "Weniger lesen"
+    },
+    "cookie": {
+      "message": "Diese Website verwendet Cookies, um das beste Erlebnis zu bieten.",
+      "accept": "Akzeptieren",
+      "decline": "Ablehnen",
+      "moreInfo": "Weitere Informationen"
+    }
+  }
+}
