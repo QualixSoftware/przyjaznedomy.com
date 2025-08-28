@@ -2,8 +2,8 @@ name = "falco-investments"
 compatibility_date = "2024-01-01"
 pages_build_output_dir = "./dist"
 
-# Production environment configuration
-[env.production.vars]
+# Environment variables
+[vars]
 ADMIN_EMAIL = "kontakt@przyjaznedomy.com"
 COMPANY_NAME = "FALCO INVESTMENTS SP.ZO.O."
 COMPANY_PHONE = "668374950"
@@ -11,47 +11,15 @@ WHATSAPP_NUMBER = "48668374950"
 ENVIRONMENT = "production"
 NODE_ENV = "production"
 
-# KV Namespace for reservations - production
-[[env.production.kv_namespaces]]
+# KV Namespaces
+[[kv_namespaces]]
 binding = "RESERVATIONS"
-id = "3ccd484b2a124c1da32fe14fa6bd11e3"
-preview_id = "037ce78c474a47b899a6008acde4b15a"
+id = "bdecc21b8a9d49e3a57c6e2df8fe8c04"
 
-# KV Namespace for sessions - production
-[[env.production.kv_namespaces]]
+[[kv_namespaces]]
 binding = "SESSION"
-id = "ecdaafbd0b05401096b7b1f97007a1b2"
-preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
+id = "5e32a704dde745efbb6e9be058474a59"
 
-# KV Namespace for newsletter - production
-[[env.production.kv_namespaces]]
+[[kv_namespaces]]
 binding = "NEWSLETTER"
-id = "3e49572222b14d17bf1254bdada2f134"
-preview_id = "32eab21023a74739a378bf275d5ddabc"
-
-# Preview environment configuration
-[env.preview.vars]
-ADMIN_EMAIL = "kontakt@przyjaznedomy.com"
-COMPANY_NAME = "FALCO INVESTMENTS SP.ZO.O."
-COMPANY_PHONE = "668374950"
-WHATSAPP_NUMBER = "48668374950"
-ENVIRONMENT = "preview"
-NODE_ENV = "preview"
-
-# KV Namespace for reservations - preview
-[[env.preview.kv_namespaces]]
-binding = "RESERVATIONS"
-id = "3ccd484b2a124c1da32fe14fa6bd11e3"
-preview_id = "037ce78c474a47b899a6008acde4b15a"
-
-# KV Namespace for sessions - preview
-[[env.preview.kv_namespaces]]
-binding = "SESSION"
-id = "ecdaafbd0b05401096b7b1f97007a1b2"
-preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
-
-# KV Namespace for newsletter - preview
-[[env.preview.kv_namespaces]]
-binding = "NEWSLETTER"
-id = "3e49572222b14d17bf1254bdada2f134"
-preview_id = "32eab21023a74739a378bf275d5ddabc"
+id = "32647a4c309b47b489f127d557d1e0a4"
