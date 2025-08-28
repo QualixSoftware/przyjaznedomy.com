@@ -23,6 +23,12 @@ binding = "SESSION"
 id = "ecdaafbd0b05401096b7b1f97007a1b2"
 preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
 
+# KV Namespace for newsletter - production
+[[env.production.kv_namespaces]]
+binding = "NEWSLETTER"
+id = "3e49572222b14d17bf1254bdada2f134"
+preview_id = "32eab21023a74739a378bf275d5ddabc"
+
 # Preview environment configuration
 [env.preview.vars]
 ADMIN_EMAIL = "kontakt@przyjaznedomy.com"
@@ -43,3 +49,9 @@ preview_id = "037ce78c474a47b899a6008acde4b15a"
 binding = "SESSION"
 id = "ecdaafbd0b05401096b7b1f97007a1b2"
 preview_id = "7b43dcad1cd54d749765bfab2e1d5405"
+
+# KV Namespace for newsletter - preview
+[[env.preview.kv_namespaces]]
+binding = "NEWSLETTER"
+id = "3e49572222b14d17bf1254bdada2f134"
+preview_id = "32eab21023a74739a378bf275d5ddabc"
