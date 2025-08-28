@@ -24,9 +24,9 @@ export const ESTATE: EstateInfo = {
   },
   location: "Brzeziny",
   description: {
-    pl: "Osiedle Brzozowe Wzgórze zlokalizowane w Brzezinach to idealne miejsce dla osób ceniących spokój, naturę i wysoką jakość życia. Nowoczesne domy w otoczeniu brzozowych lasów zapewniają komfort i harmonię z naturą.",
-    en: "Brzozowe Wzgórze Estate located in Brzeziny is the perfect place for those who value peace, nature and high quality of life. Modern houses surrounded by birch forests provide comfort and harmony with nature.",
-    de: "Die Wohnsiedlung Brzozowe Wzgórze in Brzeziny ist der ideale Ort für Menschen, die Ruhe, Natur und hohe Lebensqualität schätzen. Moderne Häuser umgeben von Birkenwäldern bieten Komfort und Harmonie mit der Natur."
+    pl: "Osiedle Brzozowe Wzgórze zlokalizowane w Brzezinach to idealne miejsce dla tych, którzy szukają spokoju, a jednocześnie pragną cieszyć się bliskością większego miasta. Nasze nowe osiedle domków jednorodzinnych łączy nowoczesną architekturę z naturalnym otoczeniem, z ekologicznie zrównoważonymi rozwiązaniami, które zmniejszają koszty eksploatacji.",
+    en: "Brzozowe Wzgórze Estate located in Brzeziny is the perfect place for those seeking tranquility while enjoying proximity to a larger city. Our new single-family home estate combines modern architecture with natural surroundings, featuring environmentally sustainable solutions that reduce operating costs.",
+    de: "Die Wohnsiedlung Brzozowe Wzgórze in Brzeziny ist der ideale Ort für diejenigen, die Ruhe suchen und gleichzeitig die Nähe zu einer größeren Stadt genießen möchten. Unsere neue Einfamilienhaussiedlung verbindet moderne Architektur mit natürlicher Umgebung und bietet ökologisch nachhaltige Lösungen, die die Betriebskosten senken."
   },
   features: {
     pl: [
@@ -34,7 +34,7 @@ export const ESTATE: EstateInfo = {
       "Bliskość natury - brzozowe lasy i tereny zielone",
       "Doskonała komunikacja z centrum miasta",
       "Pełna infrastruktura - sklepy, szkoły, przedszkola w pobliżu",
-      "Nowoczesna architektura w skandynawskim stylu",
+      "Nowoczesna architektura z funkcjonalnymi rozwiązaniami",
       "Energooszczędne rozwiązania",
       "Przestronne działki z możliwością aranżacji ogrodu",
       "Bezpieczne osiedle z monitoringiem"
@@ -44,7 +44,7 @@ export const ESTATE: EstateInfo = {
       "Close to nature - birch forests and green areas",
       "Excellent communication with the city center",
       "Full infrastructure - shops, schools, kindergartens nearby",
-      "Modern architecture in Scandinavian style",
+      "Modern architecture with functional solutions",
       "Energy-efficient solutions",
       "Spacious plots with garden arrangement possibilities",
       "Safe estate with monitoring"
@@ -54,7 +54,7 @@ export const ESTATE: EstateInfo = {
       "Nähe zur Natur - Birkenwälder und Grünflächen",
       "Ausgezeichnete Verbindung zum Stadtzentrum",
       "Vollständige Infrastruktur - Geschäfte, Schulen, Kindergärten in der Nähe",
-      "Moderne Architektur im skandinavischen Stil",
+      "Moderne Architektur mit funktionalen Lösungen",
       "Energieeffiziente Lösungen",
       "Geräumige Grundstücke mit Gartenmöglichkeiten",
       "Sicheres Anwesen mit Überwachung"
