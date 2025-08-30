@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/layout/Navigation.astro';
+import Footer from '../components/layout/Footer.astro';
+import { COMPANY, ESTATE } from '../lib/constants';
+---
+
+<BaseLayout 
+  title="O nas"
+  description="Poznaj firmę FALCO INVESTMENTS i zespół stojący za osiedlem Brzozowe Wzgórze w Brzezinach."
+>
+  <Navigation />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-birch-50 section-padding">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="font-serif text-4xl md:text-5xl font-bold text-birch-600 mb-6">
+            O nas
+          </h1>
+          <p class="text-xl text-warm-gray-700 leading-relaxed">
+            Jesteśmy firmą {COMPANY.name}, która specjalizuje się w tworzeniu wyjątkowych 
+            przestrzeni mieszkalnych. Nasze doświadczenie i pasja do architektury pozwalają nam 
+            realizować projekty, które łączą nowoczesność z harmoniją natury.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Company -->
+    <section class="section-padding">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="font-serif text-3xl font-bold text-warm-gray-900 mb-6">
+              Nasza misja
+            </h2>
+            <p class="text-lg text-warm-gray-700 mb-6 leading-relaxed">
+              Wierzymy, że każdy zasługuje na dom, który nie tylko zapewnia komfort, 
+              ale także inspiruje do życia. Dlatego każdy nasz projekt powstaje z myślą 
+              o potrzebach mieszkańców i szacunku dla środowiska naturalnego.
+            </p>
+            <p class="text-lg text-warm-gray-700 leading-relaxed">
+              {ESTATE.name.pl} to nasze najnowsze dzieło - osiedle, które doskonale 
+              odzwierciedla nasze wartości i podejście do nowoczesnego budownictwa 
+              mieszkaniowego.
+            </p>
+          </div>
+          <div class="bg-birch-100 rounded-soft p-8">
+            <h3 class="font-serif text-2xl font-semibold text-birch-700 mb-4">
+              Dlaczego my?
+            </h3>
+            <ul class="space-y-3 text-warm-gray-700">
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wieloletnie doświadczenie w branży nieruchomości</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Indywidualne podejście do każdego klienta</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Wysokiej jakości materiały i rozwiązania</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Troska o środowisko naturalne</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <svg class="w-5 h-5 text-birch-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span>Pełne wsparcie na każdym etapie zakupu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Details -->
+    <section class="bg-warm-gray-50 section-padding">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-serif text-3xl font-bold text-warm-gray-900 mb-8">
+            Dane firmy
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div class="bg-white p-6 rounded-soft shadow-soft">
+              <h3 class="font-serif text-xl font-semibold text-birch-600 mb-4">
+                Informacje prawne
+              </h3>
+              <div class="space-y-2 text-warm-gray-700">
+                <p><strong>Nazwa:</strong> {COMPANY.legalName}</p>
+                <p><strong>Adres:</strong> {COMPANY.address}</p>
+                <p><strong>Miasto:</strong> {COMPANY.zipCode} {COMPANY.city}</p>
+              </div>
+            </div>
+            <div class="bg-white p-6 rounded-soft shadow-soft">
+              <h3 class="font-serif text-xl font-semibold text-birch-600 mb-4">
+                Kontakt
+              </h3>
+              <div class="space-y-2 text-warm-gray-700">
+                <p><strong>Telefon:</strong> {COMPANY.phoneFormatted}</p>
+                <p><strong>Email:</strong> {COMPANY.email}</p>
+                <p><strong>Osoba kontaktowa:</strong> {COMPANY.contactPerson}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-serif text-3xl font-bold text-warm-gray-900 mb-6">
+            Gotowy na rozmowę?
+          </h2>
+          <p class="text-lg text-warm-gray-700 mb-8">
+            Skontaktuj się z nami, aby dowiedzieć się więcej o naszych projektach 
+            i znaleźć dom swoich marzeń w {ESTATE.name.pl}.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/kontakt" class="btn-primary">
+              Skontaktuj się z nami
+            </a>
+            <a href="/domy" class="btn-secondary">
+              Zobacz dostępne domy
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>
