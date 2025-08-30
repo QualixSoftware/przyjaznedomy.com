@@ -153,7 +153,7 @@ export default {
           '@apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-soft transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2': {},
         },
         '.btn-primary': {
-          '@apply btn bg-birch-500 text-white hover:bg-birch-600 focus:ring-birch-500': {},
+          '@apply btn bg-birch-500 text-white hover:bg-birch-400 hover:text-white focus:ring-birch-500': {},
         },
         '.btn-secondary': {
           '@apply btn bg-warm-gray-100 text-warm-gray-700 hover:bg-warm-gray-200 focus:ring-warm-gray-400': {},
